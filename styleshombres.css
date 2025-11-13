@@ -95,7 +95,7 @@ a:hover {
     color: var(--color-text-light);
     padding: 12px 30px;
     border-radius: 2px;
-    margin-top: 15px !important;
+    margin-top: 35px !important;
     /* Más cuadrado */
 }
 
@@ -381,18 +381,28 @@ a:hover {
 
 /* Imágenes específicas (usando placeholders) */
 .programs-grid .program-card:nth-child(1) .card-image-placeholder {
-    background-image: url('img/rutinam.jpg');
+    background-image: url('img/inicialhombre.jpg');
 }
 
 .programs-grid .program-card:nth-child(2) .card-image-placeholder {
-    background-image: url('img/rutinah.jpg');
+    background-image: url('img/inicialhombre.jpg');
 }
 
 .programs-grid .program-card:nth-child(3) .card-image-placeholder {
-    background-image: url('img/hit.jpg');
+    background-image: url('img/intermediohombre.webp');
 }
 
+.programs-grid .program-card:nth-child(4) .card-image-placeholder {
+    background-image: url('img/intermediohombre.webp');
+}
 
+.programs-grid .program-card:nth-child(5) .card-image-placeholder {
+    background-image: url('img/avanzadohombre.jpg');
+}
+
+.programs-grid .program-card:nth-child(6) .card-image-placeholder {
+    background-image: url('img/avanzadohombre.jpg');
+}
 
 .program-card h3 {
     font-size: 1.2em;
@@ -404,6 +414,7 @@ a:hover {
 .program-card p {
     font-size: 0.9em;
     padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 /* --- Media Queries para Responsividad --- */
