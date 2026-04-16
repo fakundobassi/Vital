@@ -1,0 +1,241 @@
+/* ── MODAL ───────────────────────────────────────────── */
+.ex-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.ex-overlay.open { display: flex; }
+
+.ex-modal {
+  background: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 20px 24px;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,34,0,0.15);
+  animation: ex-modal-in 0.22s ease;
+}
+@keyframes ex-modal-in {
+  from { transform: scale(0.92) translateY(12px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.ex-modal-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  padding-right: 36px;
+  line-height: 1.3;
+}
+
+.ex-video-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 14px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Thumbnail click-to-play */
+.ex-thumbnail {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ex-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ex-play-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7));
+  transition: transform 0.15s, filter 0.15s;
+}
+.ex-play-btn:hover  { transform: scale(1.1); }
+.ex-play-btn:active { transform: scale(0.95); }
+
+/* Iframe (visible solo tras presionar play) */
+.ex-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Placeholder cuando no hay video */
+.ex-no-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #555;
+  text-align: center;
+  padding: 20px;
+}
+.ex-no-video p { margin: 0; font-size: 0.9rem; color: #666; }
+.ex-no-video small { font-size: 0.75rem; color: #444; line-height: 1.5; }
+.ex-no-video code {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #ff4422;
+  font-family: monospace;
+}
+
+/* Botón sin video asignado */
+.ex-demo-btn--empty {
+  background: #2a2a2a !important;
+  color: #666 !important;
+}
+
+.ex-yt-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  background: #1a0a00;
+  border: 1px solid #ff2200;
+  border-radius: 8px;
+  color: #ff4422;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, color 0.2s;
+}
+.ex-yt-link:hover {
+  background: #ff2200;
+  color: #fff;
+}
+.ex-yt-link svg { flex-shrink: 0; }
+
+.ex-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #222;
+  border: 1px solid #333;
+  color: #aaa;
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+.ex-close-btn:hover { background: #ff2200; color: #fff; border-color: #ff2200; }
+
+/* ── EXERCISE LIST ───────────────────────────────────── */
+.exercise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exercise-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #141414;
+  border: 1px solid #252525;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  gap: 10px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.exercise-item:hover  { border-color: #ff2200; background: #1c0800; }
+.exercise-item:active { transform: scale(0.97); }
+
+.ex-item-info { flex: 1; min-width: 0; }
+
+.ex-item-name {
+  display: block;
+  color: #f0f0f0;
+  font-weight: 700;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ex-item-sets {
+  display: block;
+  color: #ff4422;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 3px;
+  letter-spacing: 0.04em;
+}
+
+.ex-demo-btn {
+  flex-shrink: 0;
+  background: #ff2200;
+  border: none;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 7px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, transform 0.1s;
+  text-transform: uppercase;
+}
+.ex-demo-btn:hover  { background: #cc1800; }
+.ex-demo-btn:active { transform: scale(0.93); }
+
+/* Cardio items */
+.exercise-item[data-anim="walk"],
+.exercise-item[data-anim="bike"] {
+  border-color: #1a3020;
+}
+.exercise-item[data-anim="walk"]:hover,
+.exercise-item[data-anim="bike"]:hover {
+  border-color: #00b050;
+  background: #001508;
+}
+.exercise-item[data-anim="walk"] .ex-item-sets,
+.exercise-item[data-anim="bike"] .ex-item-sets  { color: #00cc60; }
+.exercise-item[data-anim="walk"] .ex-demo-btn,
+.exercise-item[data-anim="bike"] .ex-demo-btn   { background: #007a35; }
+.exercise-item[data-anim="walk"] .ex-demo-btn:hover,
+.exercise-item[data-anim="bike"] .ex-demo-btn:hover { background: #005520; }

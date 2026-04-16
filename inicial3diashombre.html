@@ -18,6 +18,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="GYM VITAL">
     <link rel="apple-touch-icon" href="/img/icon-192.png">
+    <link rel="stylesheet" href="exercise-3d.css">
+    <script src="exercise-3d.js" defer></script>
 </head>
 
 <body>
@@ -71,15 +73,59 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        <td>
-                            Press pecho máquina – 3x12<br>
-                            Jalón al pecho – 3x12<br>
-                            Sentadilla guiada – 3x12<br>
-                            Prensa – 3x15<br>
-                            Bíceps polea – 3x12<br>
-                            Tríceps soguita – 3x12<br>
-                            Caminadora 10 min
-                        </td>
+                        <ul class="exercise-list">
+                            <div class="exercise-item" data-exercise="Press pecho máquina"
+                                data-video="https://www.youtube.com/watch?v=TAH8RxOS0VI">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Press pecho máquina</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Jalón al pecho"
+                                data-video="https://www.youtube.com/shorts/TcYwpzaRS1I">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Jalón al pecho</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Sentadilla guiada" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Sentadilla guiada</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Prensa" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Prensa</span>
+                                    <span class="ex-item-sets">3×15</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Bíceps polea" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Bíceps polea</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Tríceps soguita" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Tríceps soguita</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Caminadora" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Caminadora</span>
+                                    <span class="ex-item-sets">10 min</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -92,14 +138,50 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        <td>
-                            Press militar – 3x12<br>
-                            Remo sentado – 3x12<br>
-                            Estocadas guiadas – 3x12 c/pierna<br>
-                            Extensión de piernas – 3x15<br>
-                            Curl femoral – 3x15<br>
-                            Bicicleta 12 min
-                        </td>
+                        <ul class="exercise-list">
+                            <div class="exercise-item" data-exercise="Press militar" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Press militar</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Remo sentado" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Remo sentado</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Estocadas guiadas" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Estocadas guiadas</span>
+                                    <span class="ex-item-sets">3×12 c/pierna</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Extensión de piernas" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Extensión de piernas</span>
+                                    <span class="ex-item-sets">3×15</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Curl femoral" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Curl femoral</span>
+                                    <span class="ex-item-sets">3×15</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Bicicleta" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Bicicleta</span>
+                                    <span class="ex-item-sets">12 min</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -113,15 +195,57 @@
                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        <td>
-                            Peck deck – 3x12<br>
-                            Remo alto polea – 3x12<br>
-                            Sentadilla guiada – 3x12<br>
-                            Gemelos máquina – 3x20<br>
-                            Bíceps mancuerna – 3x12<br>
-                            Tríceps polea – 3x12<br>
-                            Elíptico 10 min
-                        </td>
+                        <ul class="exercise-list">
+                            <div class="exercise-item" data-exercise="Peck deck" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Peck deck</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Remo alto polea" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Remo alto polea</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Sentadilla guiada" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Sentadilla guiada</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Gemelos máquina" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Gemelos máquina</span>
+                                    <span class="ex-item-sets">3×20</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Bíceps mancuerna" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Bíceps mancuerna</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Tríceps polea" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Tríceps polea</span>
+                                    <span class="ex-item-sets">3×12</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                            <div class="exercise-item" data-exercise="Elíptico" data-video="">
+                                <div class="ex-item-info">
+                                    <span class="ex-item-name">Elíptico</span>
+                                    <span class="ex-item-sets">10 min</span>
+                                </div>
+                                <button class="ex-demo-btn">▶ Ver</button>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -130,9 +254,9 @@
 
 
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
-      }
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+        }
     </script>
 </body>
 

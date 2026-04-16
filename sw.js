@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gymvital-v1';
+const CACHE_NAME = 'gymvital-v3';
 const ASSETS = [
   '/',
   '/index.html',
@@ -22,7 +22,9 @@ const ASSETS = [
   '/img/avanzadohombre.jpg',
   '/img/transparent-Photoroom.png',
   '/img/icon-192.png',
-  '/img/icon-512.png'
+  '/img/icon-512.png',
+  '/exercise-3d.css',
+  '/exercise-3d.js'
 ];
 
 self.addEventListener('install', event => {

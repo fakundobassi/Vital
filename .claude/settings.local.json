@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.mayoclinic.org)",
+      "WebFetch(domain:www.lyfta.app)",
+      "WebFetch(domain:enfaf.com)",
+      "WebFetch(domain:quierocuidarme.dkv.es)",
+      "WebFetch(domain:templodelfitness.com)",
+      "WebFetch(domain:www.cambiatufisico.com)",
+      "WebFetch(domain:www.youtube.com)"
+    ]
+  }
+}
