@@ -32,22 +32,23 @@
         <p class="ex-modal-title"></p>
 
         <div class="ex-video-section">
-          <a class="ex-thumb-link" href="#" target="_blank" rel="noopener noreferrer">
-            <img class="ex-thumb-img" src="" alt="Ver tutorial en YouTube">
-            <div class="ex-play-overlay">
-              <svg viewBox="0 0 68 48" width="68" height="48">
-                <path fill="#ff2200" fill-opacity=".9"
-                  d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34
-                  0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0
-                  24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87
-                  34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94
-                  34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/>
-                <path fill="#fff" d="M45 24 27 14v20"/>
-              </svg>
-              <span>Reproducir en YouTube</span>
-            </div>
-          </a>
-          <p class="ex-hint">Toca la imagen para abrir el video</p>
+          <div class="ex-iframe-wrapper">
+            <button class="ex-thumb-btn" aria-label="Reproducir video">
+              <img class="ex-thumb-img" src="" alt="Vista previa del ejercicio">
+              <div class="ex-play-overlay">
+                <svg viewBox="0 0 68 48" width="60" height="42">
+                  <path fill="#ff2200" fill-opacity=".95"
+                    d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34
+                    0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0
+                    24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87
+                    34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94
+                    34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/>
+                  <path fill="#fff" d="M45 24 27 14v20"/>
+                </svg>
+              </div>
+            </button>
+            <span class="ex-iframe" data-video-id=""></span>
+          </div>
         </div>
 
         <div class="ex-no-video">
@@ -74,6 +75,13 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeModal();
     });
+
+    overlay.querySelector('.ex-thumb-btn').addEventListener('click', () => {
+      const iframe = overlay.querySelector('.ex-iframe');
+      if (iframe.dataset.videoId) {
+        window.open(`https://www.youtube.com/watch?v=${iframe.dataset.videoId}`, '_blank', 'noopener,noreferrer');
+      }
+    });
   }
 
   function openModal(name, rawVideo) {
@@ -82,17 +90,20 @@
     const videoId      = parseYouTubeId(rawVideo);
     const videoSection = overlay.querySelector('.ex-video-section');
     const noVideo      = overlay.querySelector('.ex-no-video');
-    const thumbLink    = overlay.querySelector('.ex-thumb-link');
+    const iframe       = overlay.querySelector('.ex-iframe');
+    const thumbBtn     = overlay.querySelector('.ex-thumb-btn');
     const thumbImg     = overlay.querySelector('.ex-thumb-img');
 
     overlay.querySelector('.ex-modal-title').textContent = name;
 
     if (videoId) {
-      thumbImg.src       = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-      thumbLink.href     = `https://www.youtube.com/watch?v=${videoId}`;
+      thumbImg.src               = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+      iframe.dataset.videoId     = videoId;
+      thumbBtn.style.display     = 'flex';
       videoSection.style.display = 'block';
       noVideo.style.display      = 'none';
     } else {
+      iframe.dataset.videoId     = '';
       videoSection.style.display = 'none';
       noVideo.style.display      = 'flex';
     }
